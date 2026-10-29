@@ -1,0 +1,70 @@
+name: 启动失败 / 硬件兼容
+description: PE 起不来、黑屏、花屏、认不到硬盘、键盘鼠标没反应
+title: "[启动] "
+labels: ["hardware"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        开机都进不去的问题，靠猜没用，请尽量把下面几项填全。
+        填得越具体，越可能一次定位。
+  - type: input
+    id: machine
+    attributes:
+      label: 机器型号
+      description: 品牌 + 型号，例如「联想开天 M75z G2t」「ThinkPad T14 Gen3」
+      placeholder: 联想开天 M75z G2t
+    validations:
+      required: true
+  - type: input
+    id: cpu
+    attributes:
+      label: CPU / 平台
+      description: 例如 兆芯 KX-7000、Intel i5-1240P、AMD 5800U、飞腾 D2000
+      placeholder: 兆芯 KX-7000
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: 显卡
+      description: 集显还是独显，型号写清楚
+      placeholder: 集显 / AMD Radeon 520 独显
+  - type: dropdown
+    id: stage
+    attributes:
+      label: 卡在哪一步
+      options:
+        - U 盘启动项都看不到（固件没认盘）
+        - 看到启动菜单，选完黑屏
+        - 进了文字菜单，但没进图形界面
+        - 图形界面出来了但花屏 / 分辨率不对
+        - 图形界面正常，但认不到硬盘
+        - 图形界面正常，但键盘鼠标没反应
+        - 其他（下面说明）
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: PE 版本
+      description: Release 上的版本号，例如 v0.5
+      placeholder: v0.5
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志
+      description: |
+        能进到系统的话，把 `/var/log/pe-*.log` 贴上来。
+        进不去就跳过，但上面几项一定要填。
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 已确认
+      options:
+        - label: 已用 `sha256sum -c SHA256SUMS` 校验过镜像
+        - label: 固件是 UEFI 启动（不是 Legacy / CSM）
+        - label: 换过 U 盘或换过 USB 口试过

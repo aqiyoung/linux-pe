@@ -10,7 +10,7 @@
 
 ## 下载
 
-去 [Releases](../../releases/latest) 拿最新的 `pe-bootable-vX.Y.iso` 和 `SHA256SUMS`：
+去 [Releases](https://github.com/aqiyoung/linux-pe/releases/latest) 拿最新的 `pe-bootable-vX.Y.iso` 和 `SHA256SUMS`：
 
 ```bash
 sha256sum -c SHA256SUMS
@@ -75,4 +75,4 @@ sudo dd if=pe-bootable-vX.Y.iso of=/dev/sdX bs=4M status=progress oflag=sync
 
 ## 版本
 
-见 [Releases](../../releases)。版本号形如 `v0.5`，每个版本附 `SHA256SUMS` 与源码说明包。
+见 [Releases](https://github.com/aqiyoung/linux-pe/releases)。版本号形如 `v0.5`，每个版本附 `SHA256SUMS` 与源码说明包。
