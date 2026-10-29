@@ -1,0 +1,10 @@
+CC BY 4.0
+
+本仓库内的文档与截图（README、说明文字、images/ 下的图片）采用
+Creative Commons Attribution 4.0 International 许可：
+https://creativecommons.org/licenses/by/4.0/
+
+注意：本许可只覆盖本仓库内的文档与截图。
+Release 中发布的镜像产物含第三方组件（busybox、python3、Linux 内核等），
+它们各自遵循自己的许可证，具体清单与源码获取方式见每个 Release 附带的
+sources-vX.Y.tar.gz。
